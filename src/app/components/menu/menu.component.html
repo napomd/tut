@@ -1,0 +1,29 @@
+<nav class="nav navbar" style="margin-bottom: 30px;">
+    <ul class="nav navbar">
+        <a class="navbar-brand" [routerLink]=""><strong>Namotex<sup>&copy;</sup></strong></a>
+        <li><a class="nav-link" routerLink="">Home</a></li>
+    
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                SubMenu1
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" routerLink="/option1">Option1t</a>
+                <a class="dropdown-item" routerLink="/search-invoice">Option2</a>
+                <a class="dropdown-item" routerLink="/invoices">Option3</a> 
+            </div>
+        </li>
+        
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                SubMenu2
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" routerLink="/doctypes">Option1</a>
+                <a class="dropdown-item" routerLink="/statuses">Option2</a>
+                <a class="dropdown-item" routerLink="/invoicecategory">Option3</a>
+                <a class="dropdown-item" routerLink="/link-doctypes">Option4</a>
+            </div>
+        </li>
+    </ul>
+</nav>
