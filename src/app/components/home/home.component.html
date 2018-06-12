@@ -1,63 +1,53 @@
-<div class="container-fluid">  
-    <div class="row">
-        <div style="margin-top:10px; margin-bottom:-10px;">
-            <h4><b>Categories</b></h4>
+<div *ngIf="dataCtrl.mode.home && !loading">
+  <div class="row">
+    <div id="carouselExampleIndicators" class="carousel slide col-md-3" data-ride="carousel" data-interval="false" style="border:0px solid #f00;background-color:#fff">
+      <ol class="carousel-indicators">
+    
+    
+      </ol>
+      <div class="carousel-inner" role="listbox">
+        <!-- Slide One - Set the background image for this slide in the line below -->
+        <div class="carousel-item active">
+          <div>
+              <p>Home</p>
+              <img [src]="imagePath" style="display:block;margin-left:auto;margin-right: auto;width:100%;">
+          </div>
         </div>
-    </div>
-    <hr>
-  
-    <div class="col-md-12">
-      <fieldset class="row">
-        <div class="col-md-12" *ngIf="supHasData">
-        
-        </div>
-  
-      </fieldset>
-    </div>
-</div>
-
-<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="false">
-    <ol class="carousel-indicators">
-      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-    </ol>
-    <div class="carousel-inner" role="listbox">
-      <!-- Slide One - Set the background image for this slide in the line below -->
-      <div class="carousel-item active" style="background-image: url('http://placehold.it/1900x1080')">
-        <div class="carousel-caption d-none d-md-block">
-          <h3>First Slide</h3>
-          <p>This is a description for the first slide.</p>
-        </div>
-      </div>
-      <!-- Slide Two - Set the background image for this slide in the line below -->
-      <div class="carousel-item" style="background-image: url('http://placehold.it/1900x1080')">
-        <div class="carousel-caption d-none d-md-block">
-          <h3>Second Slide</h3>
-          <p>This is a description for the second slide.</p>
-        </div>
-      </div>
-      <!-- Slide Three - Set the background image for this slide in the line below -->
-      <div class="carousel-item" style="margin:10px 0px 0px 0px;height:400px;border:5px solid #000;padding:0px;">
-        <div>
-          <h3>Third Slide</h3>
-          <p>This is a description for the third slide.</p>
-          <div style="height:300px;">
+        <!-- Slide Two - Set the background image for this slide in the line below -->
+        <div *ngFor="let x of resMultiple" class="carousel-item">
+          <div>
+            <p>Time: {{x.value.payload.capturetime}}</p>
+            <img [src]="x.value.payload.imgdata" style="display:block;margin-left:auto;margin-right: auto;width:100%;">  
+            <div class="row">
+              <div style="margin:15px 50px 50px 70px;" class="col-xs-6 spacing"><i style="margin-left:15px;" (click)="delete(x)" class="fa fa-trash fa-2x"></i><p><strong>Delete</strong></p></div>
+              <div style="margin:15px 50px 50px 70px;" class="col-xs-6 spacing"><i style="margin-left:15px;" class="fa fa-star fa-2x"></i><p><strong>Favorites</strong></p></div>
+            </div>          
           </div>
         </div>
       </div>
+      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
     </div>
-    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a>
+    <div class="col-md-3">
+      <h5></h5>
+      <img [src]="imagePath">
+    </div>
   </div>
+</div>
 
 
+<div class="row" *ngIf="loading" style="text-align:center; margin-top:100px;">
+  <div class="col-md-3">
+    <i class="fa fa-spinner fa-spin" style="font-size:100px"></i>
+    <p>loading...</p>
+  </div>
+</div>
 
 
 

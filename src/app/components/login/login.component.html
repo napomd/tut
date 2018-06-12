@@ -1,0 +1,54 @@
+<div class="container-fluid">
+  <div class="row" *ngIf="!loading">
+    <div class="col-md-4">
+      <div style="margin:25px;">
+        <label for="inputHorizontalSuccess" class="col-md-12 col-form-label">Username</label>
+        <div class="col-md-12">
+          <input type="email" class="form-control form-control-success" id="inputHorizontalSuccess" placeholder="Username" [(ngModel)]="credentials.username">
+        </div>
+      </div>
+      <div style="margin:25px;">
+        <label for="inputHorizontalWarning" class="col-md-12 col-form-label">Password</label>
+        <div class="col-md-12">
+          <input type="password" class="form-control form-control-warning" id="inputHorizontalWarning" placeholder="Password" [(ngModel)]="credentials.password">
+        </div>
+      </div>
+      <div style="text-align:center; margin:25px;">
+        <button type="button" class="btn btn-primary" (click)="login()" >LOGIN</button>
+      </div>
+      <p *ngIf="logfail" style="text-align:center; margin:20px;color: red">Login failed. Try again</p>
+    </div>
+  </div>
+
+  <div class="row" *ngIf="loading" style="text-align:center; margin-top:100px;">
+    <div class="col-md-3">
+      <i class="fa fa-spinner fa-spin" style="font-size:100px"></i>
+      <p>loading...</p>
+    </div>
+  </div>
+
+  <!--
+
+  <label class="switch">
+    <input type="checkbox">
+    <span class="slider"></span>
+  </label>
+
+  <label class="switch">
+    <input type="checkbox" checked>
+    <span class="slider"></span>
+  </label><br><br>
+
+  <label class="switch">
+    <input type="checkbox">
+    <span class="slider round"></span>
+  </label>
+
+  <label class="switch">
+    <input type="checkbox" checked>
+    <span class="slider round"></span>
+  </label>
+
+  -->
+  
+</div>

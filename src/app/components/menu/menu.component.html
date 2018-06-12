@@ -1,29 +1,78 @@
-<nav class="nav navbar" style="margin-bottom: 30px;">
-    <ul class="nav navbar">
-        <a class="navbar-brand" [routerLink]=""><strong>Namotex<sup>&copy;</sup></strong></a>
-        <li><a class="nav-link" routerLink="">Home</a></li>
-    
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                SubMenu1
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" routerLink="/option1">Option1t</a>
-                <a class="dropdown-item" routerLink="/search-invoice">Option2</a>
-                <a class="dropdown-item" routerLink="/invoices">Option3</a> 
-            </div>
-        </li>
+<!--<nav class="nav navbar navbar-expand-md navbar-light bg-light" style="margin-bottom: 30px;">
+    <a class="navbar-brand" [routerLink]=""><strong>Namotex<sup>&copy;</sup></strong></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle Navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="nav navbar mr-auto">
+            
+            <li class="nav-item"><a class="nav-link" routerLink="">Home</a></li>
         
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    SubMenu1
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" routerLink="/option1">Option1t</a>
+                    <a class="dropdown-item" routerLink="/search-invoice">Option2</a>
+                    <a class="dropdown-item" routerLink="/invoices">Option3</a> 
+                </div>
+            </li>
+            
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    SubMenu2
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" routerLink="/doctypes">Option1</a>
+                    <a class="dropdown-item" routerLink="/statuses">Option2</a>
+                    <a class="dropdown-item" routerLink="/invoicecategory">Option3</a>
+                    <a class="dropdown-item" routerLink="/link-doctypes">Option4</a>
+                </div>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" routerLink="contact" id="navbarDropdownMenuLink" aria-haspopup="true" aria-expanded="false">
+                    Contact
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>-->
+
+<nav class="nav navbar navbar-expand-md navbar-dark bg-dark">
+    <a class="navbar-brand" href=""><strong>Secure Home<sup>&copy;</sup></strong></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+            <a class="nav-link" (click)="reroute('home')">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Favorites</a>
+        </li>
         <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                SubMenu2
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Admin Options
             </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" routerLink="/doctypes">Option1</a>
-                <a class="dropdown-item" routerLink="/statuses">Option2</a>
-                <a class="dropdown-item" routerLink="/invoicecategory">Option3</a>
-                <a class="dropdown-item" routerLink="/link-doctypes">Option4</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" (click)="reroute('control')">System Control</a>
+            <a class="dropdown-item" (click)="reroute('users')">Manage Users</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Other</a>
             </div>
         </li>
-    </ul>
+        <li class="nav-item">
+            <a class="nav-link" (click)="reroute('contact')">Contact</a>
+        </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+            <input class="btn btn-outline-success my-2 my-sm-0" type="button" value="LOGIN" (click)="reroute('login')" />
+        </form>
+    </div>
 </nav>

@@ -1,0 +1,22 @@
+<app-menu [dataCtrl]="dataCtrl"></app-menu>
+
+<div *ngIf="dataCtrl.mode.home">
+  <app-home [dataCtrl]="dataCtrl"></app-home>
+</div>
+
+<div *ngIf="dataCtrl.mode.login">
+  <app-login [dataCtrl]="dataCtrl"></app-login>
+</div>
+
+<div *ngIf="dataCtrl.mode.contact">
+  <app-contact [dataCtrl]="dataCtrl"></app-contact>
+</div>
+
+<div *ngIf="dataCtrl.mode.control">
+  <app-settings [dataCtrl]="dataCtrl"></app-settings>
+</div>
+
+
+
+
+

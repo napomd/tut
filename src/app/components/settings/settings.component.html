@@ -1,0 +1,22 @@
+<div class="container-fluid">
+  <div class="row" *ngIf="!loading && settings.active==1" style="text-align:center; margin-top:100px;">
+    <div class="col-md-3">
+      <p style="color:#090"><strong>System armed</strong></p>
+      <p style="color:#f00">click icon to disarm</p>
+      <i class="fa fa-unlock" style="font-size:100px" (click)="process(0)"></i>
+    </div>
+  </div>
+  <div class="row" *ngIf="!loading && settings.active==0" style="text-align:center; margin-top:100px;">
+    <div class="col-md-3">
+      <p style="color:#f00"><strong>System NOT armed!</strong></p>
+      <p style="color:#090">click icon to arm</p>
+      <i class="fa fa-lock" style="font-size:100px" (click)="process(1)"></i>
+    </div>
+  </div>
+  <div class="row" *ngIf="loading" style="text-align:center; margin-top:100px;">
+    <div class="col-md-3">
+      <i class="fa fa-spinner fa-spin" style="font-size:100px"></i>
+      <p>loading...</p>
+    </div>
+  </div>
+</div>

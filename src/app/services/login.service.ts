@@ -4,18 +4,14 @@ import 'rxjs/Rx';
 import { BaseService } from './baseservice.service';
 
 @Injectable()
-export class MainService  extends BaseService {
+export class LoginService extends BaseService {
 
   constructor(http:Http) { 
-    super("", http);
+    super("login", http);
   }
 
-  getImages(body: any) {
+  getLogin(body: any) {
     return this.http.post(this.url, body, this.options).map(response => response.json());
-  }
-
-  updateImage(body: any){
-    return this.http.post(`${this.url}delete`, body, this.options).map(response => response.json());
   }
 
 }

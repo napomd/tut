@@ -11,7 +11,8 @@ import 'rxjs/add/operator/do';
 export class BaseService {
 
     //protected url: string = environment.url;
-    url: string = "http://localhost:3000/"; 
+    //url: string = "http://localhost:3000/"; 
+    url: string = "https://itufinalpro.eu-gb.mybluemix.net/"
     headers: Headers;
     protected options: RequestOptions;
     http: Http;

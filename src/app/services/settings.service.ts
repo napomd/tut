@@ -4,18 +4,18 @@ import 'rxjs/Rx';
 import { BaseService } from './baseservice.service';
 
 @Injectable()
-export class MainService  extends BaseService {
+export class SettingsService extends BaseService {
 
   constructor(http:Http) { 
-    super("", http);
+    super("settings", http);
   }
 
-  getImages(body: any) {
+  getSettings(body: any) {
     return this.http.post(this.url, body, this.options).map(response => response.json());
   }
 
-  updateImage(body: any){
-    return this.http.post(`${this.url}delete`, body, this.options).map(response => response.json());
+  updateSettings(body: any){
+    return this.http.post(`${this.url}/update`, body, this.options).map(response => response.json());
   }
 
 }
